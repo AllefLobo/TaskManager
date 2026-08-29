@@ -1,0 +1,25 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.userprefs
+artifacts/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+.vsconfig
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## OS
+.DS_Store
+
+## Secrets / config local
+appsettings.*.local.json
+*.local.json

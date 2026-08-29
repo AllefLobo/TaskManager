@@ -1,0 +1,60 @@
+@TaskManager_HostAddress = http://localhost:5095
+
+### Listar todas as tarefas
+GET {{TaskManager_HostAddress}}/api/tarefas
+Accept: application/json
+
+###
+
+### Buscar tarefa por id
+GET {{TaskManager_HostAddress}}/api/tarefas/1
+Accept: application/json
+
+###
+
+### Buscar tarefa inexistente (esperado 404)
+GET {{TaskManager_HostAddress}}/api/tarefas/999
+Accept: application/json
+
+###
+
+### Criar nova tarefa
+POST {{TaskManager_HostAddress}}/api/tarefas
+Content-Type: application/json
+
+{
+  "nome": "Estudar .NET",
+  "concluida": false
+}
+
+###
+
+### Atualizar tarefa existente
+PUT {{TaskManager_HostAddress}}/api/tarefas/2
+Content-Type: application/json
+
+{
+  "nome": "Estudar ASP.NET Core",
+  "concluida": true
+}
+
+###
+
+### Atualizar tarefa inexistente (esperado 404)
+PUT {{TaskManager_HostAddress}}/api/tarefas/999
+Content-Type: application/json
+
+{
+  "nome": "Nao existe",
+  "concluida": false
+}
+
+###
+
+### Excluir tarefa
+DELETE {{TaskManager_HostAddress}}/api/tarefas/1
+
+###
+
+### Excluir tarefa inexistente (esperado 404)
+DELETE {{TaskManager_HostAddress}}/api/tarefas/999
